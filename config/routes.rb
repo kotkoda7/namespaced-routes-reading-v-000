@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: %i[index show new create edit update]
-  
-  root 'posts#index'
 
   namespace :admin do
     resources :stats, only: [:index]
   end
+
+
+  root 'posts#index'
 end
+
